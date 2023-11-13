@@ -2,19 +2,14 @@ import random
 import csv
 import os
 
-
-
-
-    
-
-# Fonction pour afficher la grille du jeu
+# Display the game board
 def afficher_grille(grille):
     print("\n")
     for ligne in grille:
         print(" | ".join(ligne))
         print("-" * 9)
 
-# Fonction pour vérifier si un joueur a gagné
+# Verify if a player win
 def verifier_victoire(grille, symbole):
     for ligne in grille:
         if all(cell == symbole for cell in ligne):
@@ -26,11 +21,11 @@ def verifier_victoire(grille, symbole):
         return True
     return False
 
-# Fonction pour vérifier si la grille est pleine (match nul)
+# Verify draw
 def verifier_match_nul(grille):
     return all(cell != " " for ligne in grille for cell in ligne)
 
-# Fonction pour le tour de jeu de l'ordinateur
+# Turn of the bot
 def tour_ordinateur(grille, symbole):
     while True:
         ligne, colonne = random.randint(0, 2), random.randint(0, 2)
@@ -38,7 +33,7 @@ def tour_ordinateur(grille, symbole):
             grille[ligne][colonne] = symbole
             return ligne,colonne
 
-# Fonction principale du jeu
+# Principal function of the game
 def jeu_ordinateur_vs_ordinateur():
     grille = [[" " for _ in range(3)] for _ in range(3)]  # Créer une grille vide de 3x3
     ordinateur1 = "X"
@@ -47,14 +42,14 @@ def jeu_ordinateur_vs_ordinateur():
     coups = []
 
     print("Début du jeu entre deux ordinateurs :")
-    #afficher_grille(grille)
+    # afficher_grille(grille)
 
     while True:
         ligne, colonne = tour_ordinateur(grille, ordinateur1)
         coordonnees = (ligne,colonne)
         coups.append(coordonnees[:])
 
-        #afficher_grille(grille)
+        # afficher_grille(grille)
 
         if verifier_victoire(grille, ordinateur1):
             print(f"L'ordinateur X ({ordinateur1}) a gagné !")
@@ -73,7 +68,7 @@ def jeu_ordinateur_vs_ordinateur():
         coordonnees = (ligne,colonne)
         coups.append(coordonnees[:])
 
-        #afficher_grille(grille)
+        # afficher_grille(grille)
 
         if verifier_victoire(grille, ordinateur2):
             print(f"L'ordinateur O ({ordinateur2}) a gagné !")
@@ -90,19 +85,19 @@ def jeu_ordinateur_vs_ordinateur():
 
     print("Fin du jeu.")
 
-# Fonction pour enregistrer la partie dans un fichier CSV
+# Save the game in a CSV file
 def enregistrer_partie(coups, resultat):
     with open(chemin_fichier_csv, "a", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(coups + [resultat])
 
 if __name__ == "__main__":
-    # Définissez le nom du fichier CSV que vous souhaitez créer
+    # Define the name of the file
     nom_fichier_csv = "tictactoe.csv"
     # Obtenez le chemin complet du fichier CSV en utilisant os.path.join pour concaténer le dossier actuel avec le nom du fichier
     chemin_fichier_csv = os.path.join(os.path.dirname(__file__), nom_fichier_csv)
 
-    # Vérifiez si le fichier CSV existe, sinon créez-le
+    # Verify if the file already exists, otherwise create it
     if not os.path.isfile(chemin_fichier_csv):
         with open(chemin_fichier_csv, "w", newline="") as file:
             writer = csv.writer(file)
