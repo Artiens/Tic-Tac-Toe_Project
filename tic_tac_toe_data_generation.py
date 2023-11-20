@@ -88,7 +88,7 @@ def jeu_ordinateur_vs_ordinateur():
 # Save the game in a CSV file
 def enregistrer_partie(coups, resultat):
     with open(chemin_fichier_csv, "a", newline="") as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file,delimiter=";")
         writer.writerow(coups + [resultat])
 
 if __name__ == "__main__":
@@ -100,8 +100,8 @@ if __name__ == "__main__":
     # Verify if the file already exists, otherwise create it
     if not os.path.isfile(chemin_fichier_csv):
         with open(chemin_fichier_csv, "w", newline="") as file:
-            writer = csv.writer(file)
+            writer = csv.writer(file,delimiter=";")
             writer.writerow(["MOVE1","MOVE2","MOVE3","MOVE4","MOVE5","MOVE6","MOVE7","MOVE8","MOVE9","RESULT"])
 
-    for i in range(10000):
+    for i in range(1000):
         jeu_ordinateur_vs_ordinateur()
