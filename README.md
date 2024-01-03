@@ -1,4 +1,4 @@
-# Project Name
+# Tic Tac Toe Project
 
 Brief description or introduction to your project.
 
