@@ -1,6 +1,6 @@
 # Tic Tac Toe Project
 
-Brief description or introduction to your project.
+This is a project we worked on for the university of Vic. We created our own dataset of hundred thousand gameplays of tic-tac-toe played randomly, and we tried to train an IA based on this dataset in order to obtain better result.
 
 ## Table of Contents
 
