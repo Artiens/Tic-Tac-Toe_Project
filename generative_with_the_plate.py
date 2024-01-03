@@ -40,7 +40,7 @@ def jeu_ordinateur_vs_ordinateur():
     ordinateur2 = -1
     coups = []
 
-    print("Début du jeu entre deux ordinateurs :")
+    # print("Début du jeu entre deux ordinateurs :")
     # afficher_grille(grille)
     while True:
         
@@ -48,18 +48,18 @@ def jeu_ordinateur_vs_ordinateur():
         ###PREMIER JOUEUR###
         grille_coup1= tour_ordinateur(grille, ordinateur1)   
         coups.append(grille_coup1)
-        print (coups)
+        # print (coups)
 
         # afficher_grille(grille)
 
         if verifier_victoire(grille, ordinateur1):
-            print(f"L'ordinateur X ({ordinateur1}) a gagné !")
+            # print(f"L'ordinateur X ({ordinateur1}) a gagné !")
             while(len(coups) < 9):
                 coups.append("?")
             enregistrer_partie(coups, "win")
             break
         elif verifier_match_nul(grille):
-            print("Match nul !")
+            # print("Match nul !")
             while(len(coups) < 9):
                 coups.append("?")
             enregistrer_partie(coups, "draw")
@@ -71,24 +71,24 @@ def jeu_ordinateur_vs_ordinateur():
         ### DEUXIEME JOUEUR ###
         grille_coup2 = tour_ordinateur(grille, ordinateur2)
         coups.append(grille_coup2)
-        print(coups)
+        # print(coups)
 
         # afficher_grille(grille)
 
         if verifier_victoire(grille, ordinateur2):
-            print(f"L'ordinateur O ({ordinateur2}) a gagné !")
+            # print(f"L'ordinateur O ({ordinateur2}) a gagné !")
             while(len(coups) < 9):
                 coups.append("?")
             enregistrer_partie(coups, "loss")
             break
         elif verifier_match_nul(grille):
-            print("Match nul !")
+            # print("Match nul !")
             while(len(coups) < 9):
                 coups.append("?")
             enregistrer_partie(coups, "draw")
             break
 
-    print("Fin du jeu.")
+    # print("Fin du jeu.")
 
 # Save the game in a CSV file
 def enregistrer_partie(coups, resultat):
