@@ -12,19 +12,22 @@ Brief description or introduction to your project.
 
 ## Features
 
-List the key features of your project. You can use bullet points or descriptions, depending on your preference.
+This repository contains the following files:
 
-- Feature 1
-- Feature 2
-- ...
+- `requirements.txt`: File containing dependencies needed for the project.
+- `main.py`: Launch an manage all the other files
+- `generative_with_the_plate.py`: Generate a dataset of tic-tac-toe gameplays of two computer playing randomly.
+- `results.py`: Show some results obtained after the IA gameplays.
+- `test_entier.py`: Training of tha IA and creation of a new dataset based on a gameplay between IA and a computer playing randomly
+- `want_win.py`: getting a new dataset from generative_with_the_plate.py but contening only wins to train the IA
 
 ## Installation
 
-Provide instructions on how to install and set up your project. You can include code snippets or step-by-step guides.
+
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/your-project.git
+git clone https://github.com/Artiens/Tic-Tac-Toe_Project.git
 
 # Change directory
 cd your-project
