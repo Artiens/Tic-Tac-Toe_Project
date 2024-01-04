@@ -24,13 +24,12 @@ This repository contains the following files:
 ## Installation
 
 
-
 ```bash
 # Clone the repository
 git clone https://github.com/Artiens/Tic-Tac-Toe_Project.git
 
 # Change directory
-cd your-project
+cd Tic-Tac-Toe_Project
 
 # Install dependencies
 npm install
